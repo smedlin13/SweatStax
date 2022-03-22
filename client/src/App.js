@@ -5,8 +5,9 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import { Routes, Route } from 'react-router-dom';
 import FetchUser from './components/auth/FetchUser';
-import Profile from './components/shared/Profile';
+import Profile from './components/auth/Profile';
 import ProtectedRoute from './components/auth/ProtectedRoute'
+
 
 const App = () => (
   <>
@@ -16,7 +17,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route exact path="/" element={<ProtectedRoute />}>
-        <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

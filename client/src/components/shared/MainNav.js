@@ -8,6 +8,11 @@ const MainNav = ({user, handleLogout }) => {
     if (user) {
       return (
         <>
+          <Link to='/profile'>
+            <li>
+              Profile
+            </li>
+          </Link>
           <li onClick={ () => handleLogout() }>
             Logout
           </li>

@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { AuthConsumer } from "../../providers/AuthProvider";
 
 const Register = ({ handleRegister }) => {
-  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '' }) 
+  const [user, setUser] = useState({ fname: '', lname: '', username: '', caption: '', email: '', password: '', image: null, passwordConfirmation: '' }) 
   
   const handleSubmit = (e) => {
     e.preventDefault();
     if (user.password === user.passwordConfirmation) {
       handleRegister(user);
-      setUser({ email: '', password: '', passwordConfirmation: ''})
+      setUser({ fname: '', lname: '', username: '', caption: '', email: '', password: '', passwordConfirmation: '', image: null})
      } else {
       alert('Passwords Do Not Match!')
      }
@@ -18,16 +18,50 @@ const Register = ({ handleRegister }) => {
     <>
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
+        <label>First Name</label>
+          <input
+            type="text"
+            required
+            autoFocus
+            name='fname'
+            value={user.fname}
+            placeholder='First Name'
+            onChange={(e) => setUser({ ...user, fname: e.target.value })}
+          />
+        <label>Last Name</label>
+        <input
+          type="text"
+          required
+          name='lname'
+          value={user.lname}
+          placeholder='Last Name'
+          onChange={(e) => setUser({ ...user, lname: e.target.value })}
+        />
         <label>Email</label>
         <input
           type="email"
           required
-          autoFocus
           name='email'
           value={user.email}
           placeholder='Email'
           onChange={(e) => setUser({ ...user, email: e.target.value })}
         />
+        <label>Username</label>
+        <input
+          type="text"
+          required
+          name='username'
+          value={user.username}
+          placeholder='Username'
+          onChange={(e) => setUser({ ...user, username: e.target.value })}
+        />
+        <label>About You</label>
+        <textarea
+          name='caption'
+          value={user.caption}
+          placeholder='A Short Description of Who You Are'
+          onChange={(e) => setUser({ ...user, caption: e.target.value })}
+        ></textarea>
         <label>Password</label>
         <input
           required
