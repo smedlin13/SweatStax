@@ -11,7 +11,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 const Profile = ({ user, updateUser }) => {
   const [editing, setEditing] = useState(false)
-  const [formVals, setFormValue] = useState({ fname: '', lname: '', username: '', caption: '', email: '', password: '', id: ''})
+  const [formVals, setFormValue] = useState({ fname: '', lname: '', username: '', caption: '', email: '', password: '', id: '', image: null})
   const [file, setFile] = useState()
 
   useEffect( () => {
@@ -43,6 +43,13 @@ const Profile = ({ user, updateUser }) => {
         </div>
       </>
     )
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateUser(user.id, formVals);
+    setEditing(false)
+    setFormValue({ ...formVals})
   }
 
   const editView = () => {
@@ -127,12 +134,6 @@ const Profile = ({ user, updateUser }) => {
     )
   } 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    updateUser(user.id, formVals);
-    setEditing(false)
-    setFormValue({ ...formVals, image: null })
-  }
 
   return (
     <>

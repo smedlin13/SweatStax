@@ -50,6 +50,7 @@ const AuthProvider = ({ children }) => {
     data.append('username', user.username);
     data.append('caption', user.caption);
     data.append('email', user.email);
+    data.append('password', user.password);
     data.append('file', user.image);
     axios.put(`/api/users/${id}`, data)
       .then( res => {
