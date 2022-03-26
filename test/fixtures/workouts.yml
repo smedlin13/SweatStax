@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  img: MyString
+  note: MyString
+  workout_type: MyString
+  calories: 1
+  elevation: 1
+  duration: 1
+  date: MyString
+  location: MyString
+  dif_level: 1
+  tag: MyString
+  user: one
+
+two:
+  img: MyString
+  note: MyString
+  workout_type: MyString
+  calories: 1
+  elevation: 1
+  duration: 1
+  date: MyString
+  location: MyString
+  dif_level: 1
+  tag: MyString
+  user: two

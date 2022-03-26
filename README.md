@@ -9,11 +9,11 @@ Things you may want to cover:
 Rails version 6.1.5 (had to downgrade to use devise)
 
 * System dependencies
-Webpack
+Webpack - compile JavaScript modules, helps you bundle your resources
 React
 Cloudinary to store files
 Filepond to upload files
-React Hooks
+React Client-Side indexing
 
 * Configuration
 

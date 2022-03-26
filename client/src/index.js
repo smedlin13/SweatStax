@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import AuthProvider from "./providers/AuthProvider";
+import WorkoutProvider from "./providers/WorkoutProvider";
 import { initMiddleware } from 'devise-axios';
 
 initMiddleware();
@@ -13,7 +14,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-      <App />
+        <WorkoutProvider>
+          <App />
+        </WorkoutProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,

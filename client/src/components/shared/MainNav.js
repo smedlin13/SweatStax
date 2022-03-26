@@ -13,6 +13,11 @@ const MainNav = ({user, handleLogout }) => {
               Profile
             </li>
           </Link>
+          <Link to='/workouts'>
+            <li>
+              Workouts
+            </li>
+          </Link>
           <li onClick={ () => handleLogout() }>
             Logout
           </li>
