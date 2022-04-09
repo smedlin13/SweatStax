@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
 const WorkoutForm = ({id, img, note, workout_type, calories, elevation, duration, date, location, dif_level, tag, addWorkout, updateWorkout}) => {
-  const [workout, setWorkout] = useState({img: '', note: '', workout_type: '', calories: 0, elevation: 0, duration: 0, date: 0, location: '', dif_level: 0, tag: ''})
+  const [workout, setWorkout] = useState({img: '', note: '', workout_type: '', calories: 0, elevation: 0, duration: 0, date: '', location: '', dif_level: 0, tag: ''})
 
 
   useEffect( () => {
     if (id) {
-      setWorkout({img, note, workout_type, calories, elevation, duration, date, location, dif_level, tag})
+      setWorkout({ img, note, workout_type, calories, elevation, duration, date, location, dif_level, tag })
   }
   }, [])
 
@@ -17,7 +17,7 @@ const WorkoutForm = ({id, img, note, workout_type, calories, elevation, duration
     } else {
       addWorkout(workout)
     } 
-    setWorkout({img: '', note: '', workout_type: '', calories: 0, elevation: 0, duration: 0, date: 0, location: '', dif_level: 0, tag: ''})
+    setWorkout({img: '', note: '', workout_type: '', calories: 0, elevation: 0, duration: 0, date: '', location: '', dif_level: 0, tag: ''})
     }
   
   return (
@@ -34,18 +34,19 @@ const WorkoutForm = ({id, img, note, workout_type, calories, elevation, duration
         />
       <label>Date:</label>
         <input
-            type="integer"
+            type="date"
             name="date"
             value={workout.date}
             onChange={(e) => setWorkout({ ...workout, date: e.target.value})}
           />
       <label>Description</label>
-        <input
+        <textarea
           type="text"
           name="note"
           value={workout.note}
+          placeholder="How many reps did you do?"
           onChange={(e) => setWorkout({ ...workout, note: e.target.value})}
-        />
+        ></textarea>
       <label>Difficulty Level - How did the workout feel 1 out of 5?</label>
         <select
           type="integer"
@@ -89,6 +90,7 @@ const WorkoutForm = ({id, img, note, workout_type, calories, elevation, duration
             name="img"
             value={workout.img}
             onChange={(e) => setWorkout({ ...workout, img: e.target.value})}
+            required
           />
       <label>Calories Burned:</label>
         <input

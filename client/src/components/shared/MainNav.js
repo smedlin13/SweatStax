@@ -1,5 +1,11 @@
 import { AuthConsumer } from "../../providers/AuthProvider";
 import { Link } from 'react-router-dom';
+import {Navbar, Icon, NavItem, Dropdown} from 'react-materialize';
+import React from 'react';
+// this next import is important for materialize to actually show up!
+import 'materialize-css/dist/css/materialize.min.css';
+import { SweatNav, SweatNavItem, DropdownId } from '../../styles/shared';
+import Logo from '../images/Logo.jpg';
 
 const MainNav = ({user, handleLogout }) => {
   
@@ -8,35 +14,36 @@ const MainNav = ({user, handleLogout }) => {
     if (user) {
       return (
         <>
-          <Link to='/profile'>
-            <li>
+          <SweatNavItem href='/profile'>
+            {/* <Link to='/profile'> */}
               Profile
-            </li>
-          </Link>
-          <Link to='/workouts'>
-            <li>
+            {/* </Link> */}
+          </SweatNavItem>
+          <SweatNavItem href='/workouts'>
+            {/* <Link to='/workouts'> */}
               Workouts
-            </li>
-          </Link>
-          <li onClick={ () => handleLogout() }>
+            {/* </Link> */}
+          </SweatNavItem>
+          <SweatNavItem onClick={ () => handleLogout() }>
             Logout
-          </li>
+            {/* </Link> */}
+          </SweatNavItem>
         </>
       )
     } else {
       // links to show up when Not logged in
       return (
         <>
-          <Link to='/login'>
-            <li>
+          <SweatNavItem herf='/login'>
+            {/* <Link to='/login'> */}
               Login
-            </li>
-          </Link>
-          <Link to='/register'>
-            <li>
+            {/* </Link> */}
+          </SweatNavItem>
+          <SweatNavItem href='/register'>
+            {/* <Link to='/register'> */}
               Register
-            </li>
-          </Link>
+            {/* </Link> */}
+          </SweatNavItem>
         </>
       )
     }
@@ -45,16 +52,56 @@ const MainNav = ({user, handleLogout }) => {
   // links that show up regardless of login or out
   return (
     <>
-      <nav>
-        <ul>
-          <Link to='/'>
-            <li>
-              Home
-            </li>
-          </Link>
+      <SweatNav
+        alignLinks="right"
+        brand=
+        {<a className="brand-logo left" href="/"> 
+        <img src={Logo}
+        height="80px" />
+        </a>}
+        id="mobile-nav"
+        menuIcon={<Icon>menu</Icon>}
+        options={{
+          draggable: true,
+          edge: 'left',
+          inDuration: 250,
+          onCloseEnd: null,
+          onCloseStart: null,
+          onOpenEnd: null,
+          onOpenStart: null,
+          outDuration: 200,
+          preventScrolling: true
+        }}
+      >
+        {/* <NavItem href='/profile'>
+          Profile
+        </NavItem>
+        
+          { rightNavItems() } */}
+          <DropdownId
+            id="Dropdown_14"
+            options={{
+              alignment: 'left',
+              autoTrigger: true,
+              closeOnClick: true,
+              constrainWidth: true,
+              container: null,
+              coverTrigger: true,
+              hover: false,
+              inDuration: 150,
+              onCloseEnd: null,
+              onCloseStart: null,
+              onOpenEnd: null,
+              onOpenStart: null,
+              outDuration: 250
+            }}
+            trigger={<a href="#!">Login</a>}
+          >
+        <SweatNavItem>
             { rightNavItems() }
-        </ul>
-      </nav>
+        </SweatNavItem>
+      </DropdownId>
+      </SweatNav>
     </>
   )
 }

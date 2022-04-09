@@ -29,7 +29,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-
+gem 'materialize-sass'
 gem 'devise_token_auth', '~> 1.2'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -40,12 +40,12 @@ gem 'devise_token_auth', '~> 1.2'
 # Error message said I needed sprockets, SM
 gem 'sprockets', '~> 3.0'
 gem 'cloudinary'
+gem 'materialize-sass'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'pry'
   gem 'faker'
-  # gem 'pry'
   gem 'dotenv-rails'
 end
 

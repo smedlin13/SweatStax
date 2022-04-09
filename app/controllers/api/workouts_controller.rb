@@ -1,5 +1,5 @@
 class Api::WorkoutsController < ApplicationController
-  before_action :set_workout, :only [:show, :update, :destroy]
+  before_action :set_workout, only: [:show, :update, :destroy]
   
   def index 
     render json: current_user.workouts

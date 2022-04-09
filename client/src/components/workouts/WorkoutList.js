@@ -1,16 +1,17 @@
 import {WorkoutConsumer} from '../../providers/WorkoutProvider';
-import Workout from './Workout';
-import WorkoutForm from './WorkoutForm';
+import {Link} from 'react-router-dom';
 
 
-const WorkoutList = ({workouts, addWorkout }) => {
+
+const WorkoutList = ({workouts, addWorkout, workout_type, date, id }) => {
   return(
     <>
-      <h1>Workouts</h1>
       { workouts.map( w => 
-        <Workout {...w} />
+        <>
+        <Link to={`/workouts/${w.id}`}>{w.workout_type} {w.date}</Link>
+        <br />
+        </>
       )}
-      <WorkoutForm addWorkout={addWorkout} />
     </>
   )
 }

@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
     axios.put(`/api/users/${id}`, data)
       .then( res => {
         setUser(res.data)
-        navigate('/')
+        navigate('/profile')
       })
       .catch( err => console.log(err) )
   }

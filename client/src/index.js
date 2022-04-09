@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import AuthProvider from "./providers/AuthProvider";
 import WorkoutProvider from "./providers/WorkoutProvider";
 import { initMiddleware } from 'devise-axios';
+import 'materialize-css';
 
 initMiddleware();
 

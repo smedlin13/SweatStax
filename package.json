@@ -1,5 +1,10 @@
 {
   "devDependencies": {
     "webpack": "^5.70.0"
+  },
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2",
+    "react-materialize": "^3.10.0",
+    "styled-components": "^5.3.5"
   }
 }

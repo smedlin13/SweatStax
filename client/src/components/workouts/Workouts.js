@@ -21,7 +21,9 @@ const Workouts = ({ workouts, getAllWorkouts, addWorkout }) => {
         :
         <button onClick={() => setAdding(true)}>+</button>
       }
+      <br />
       <WorkoutList workouts={workouts} />
+
       </>
     )
   }

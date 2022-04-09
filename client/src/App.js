@@ -9,7 +9,8 @@ import Profile from './components/auth/Profile';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Workouts from './components/workouts/Workouts';
 import WorkoutShow from './components/workouts/WorkoutShow';
-
+import Dashboard from './components/shared/Dashboard';
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 const App = () => (
   <>
@@ -19,6 +20,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route exact path="/" element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/workouts" element={<Workouts />} />
           <Route path="/workouts/:workoutId" element={<WorkoutShow />} />
