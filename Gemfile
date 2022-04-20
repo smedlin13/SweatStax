@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem "net-smtp", require: false
 ruby "3.1.1"
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", '~> 6.1.4', '>= 6.1.4.4'
 
@@ -44,6 +44,7 @@ gem 'cloudinary'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'pry'
+  gem "debug", ">= 1.0.0"
   gem 'faker'
   gem 'dotenv-rails'
 end
