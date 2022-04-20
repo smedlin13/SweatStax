@@ -4,6 +4,8 @@
   },
   "dependencies": {
     "materialize-css": "^1.0.0-rc.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-materialize": "^3.10.0",
     "styled-components": "^5.3.5"
   },
@@ -21,7 +23,6 @@
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run build && npm run deploy && echo 'Client Built'"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/smedlin13/SweatStax.git"
