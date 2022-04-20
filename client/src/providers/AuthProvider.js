@@ -42,6 +42,15 @@ const AuthProvider = ({ children }) => {
         console.log(res);
       })
   }
+
+  // const updateWorkout = (workout_total) => {
+  //   let data = new FormData()
+  //   data.append('workout_total', workout_total)
+  //   axios.post('/api/update-workout', data)
+  //   .then( res => setUser(res.data) )
+  //   .catch( err => console.log(err) )
+  // }
+
   
   const updateUser = (id, user) => {
     let data = new FormData();

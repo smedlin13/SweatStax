@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
 
     file = params[:file]
 
-    
+
     if file && file != ''
       begin
         ext = File.extname(file.tempfile)
@@ -35,5 +35,15 @@ class Api::UsersController < ApplicationController
       end
     end
   end
+
+  # def add_workouts
+  # incoming_workouts = params[:workout_total]
+  #     current_user.workout_total = incoming_workouts
+  #     if current_user.save 
+  #       render json: current_user
+  #     else
+  #       render json: { errors: current_user.errors }, status: :unprocessable_entity 
+  #     end
+  #   end
 
 end

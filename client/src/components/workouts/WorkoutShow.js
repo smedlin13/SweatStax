@@ -2,6 +2,7 @@ import { WorkoutConsumer } from '../../providers/WorkoutProvider';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const WorkoutShow = ({updateWorkout}) => {
   const params = useParams()
@@ -29,6 +30,7 @@ const WorkoutShow = ({updateWorkout}) => {
     <h5>Notes: {note}</h5>
     <img src={img} style={{ width: '500px'}} />
 
+    <button><Link to="/workouts">Back</Link></button>
 
     </>
   )

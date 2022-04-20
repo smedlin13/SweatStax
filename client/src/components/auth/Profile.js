@@ -5,7 +5,7 @@ import "filepond/dist/filepond.min.css";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-
+import { ProfileView, ProfileImg, H1, H2} from '../../styles/shared';
 
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
@@ -37,10 +37,12 @@ const Profile = ({ user, updateUser }) => {
     const defaultImage = 'https://d30y9cdsu7xlg0.cloudfront.net/png/15724-200.png';
     return (
       <>
-        <div>
-          <img src={user ? formVals.image : defaultImage } alt="profile_pic" />
-          <h1>{formVals.fname} {formVals.lname}</h1>
-        </div>
+        <ProfileView>
+          <ProfileImg src={user ? formVals.image : defaultImage } alt="profile_pic" />
+          <H1>{formVals.fname} {formVals.lname}</H1>
+          <H2>{formVals.caption}</H2>
+          <H2></H2>
+        </ProfileView>
       </>
     )
   }

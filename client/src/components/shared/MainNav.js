@@ -35,14 +35,10 @@ const MainNav = ({user, handleLogout }) => {
       return (
         <>
           <SweatNavItem herf='/login'>
-            {/* <Link to='/login'> */}
               Login
-            {/* </Link> */}
           </SweatNavItem>
           <SweatNavItem href='/register'>
-            {/* <Link to='/register'> */}
               Register
-            {/* </Link> */}
           </SweatNavItem>
         </>
       )
@@ -97,9 +93,9 @@ const MainNav = ({user, handleLogout }) => {
             }}
             trigger={<a href="#!">Login</a>}
           >
-        <SweatNavItem>
+        {/* <SweatNavItem> */}
             { rightNavItems() }
-        </SweatNavItem>
+        {/* </SweatNavItem> */}
       </DropdownId>
       </SweatNav>
     </>
