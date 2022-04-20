@@ -16,26 +16,17 @@ const Workouts = ({ workouts, getAllWorkouts, addWorkout }) => {
     <h1>Workouts</h1>
     { adding ? 
           <>
-        <WorkoutForm addWorkout={addWorkout} />
-        <button onClick={() => setAdding(false)}>Cancel</button>
+        {/* <WorkoutForm addWorkout={addWorkout} />
+        <button onClick={() => setAdding(false)}>Cancel</button> */}
           </>
-        :
-        // <Button
-        //   className="red"
-        //   floating
-        //   icon={<Icon>+</Icon>}
-        //   large
-        //   node="button"
-        //   waves="light"
-          
-        // >
+        : 
           <Modal
           actions={[
             <Button flat modal="close" node="button" waves="green">Close</Button>
           ]}
           bottomSheet={false}
           fixedFooter={false}
-          header="Modal Header"
+          header="Share Your Workout!"
           id="Modal-10"
           open={false}
           options={{
@@ -53,7 +44,7 @@ const Workouts = ({ workouts, getAllWorkouts, addWorkout }) => {
           }}
           
           trigger={<Button node="button">+</Button>}>
-            <WorkoutForm onClick={() => setAdding(true)} />
+            <WorkoutForm addWorkout={addWorkout} onClick={() => setAdding(true)} />
           </Modal>
 
         // </Button>

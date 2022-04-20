@@ -31,6 +31,7 @@ class Api::WorkoutsController < ApplicationController
     render json: { message: 'Workout deleted' }
   end
 
+
   private 
   def workout_params
     params.require(:workout).permit(:img, :note, :workout_type, :calories, :elevation, :duration, :date, :location, :dif_level, :tag)
@@ -39,4 +40,8 @@ class Api::WorkoutsController < ApplicationController
   def set_workout
     @workout = current_user.workouts.find(params[:id])
   end
+
+
 end
+
+  

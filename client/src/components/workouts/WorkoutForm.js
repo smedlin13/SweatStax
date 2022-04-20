@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 
-const WorkoutForm = ({id, img, note, workout_type, calories, elevation, duration, date, location, dif_level, tag, addWorkout, updateWorkout}) => {
+
+const WorkoutForm = ({id, img, note, workout_type, calories, elevation, duration, date, location, dif_level, tag, addWorkout, updateWorkout, setAdding}) => {
   const [workout, setWorkout] = useState({img: '', note: '', workout_type: '', calories: 0, elevation: 0, duration: 0, date: '', location: '', dif_level: 0, tag: ''})
 
 
   useEffect( () => {
     if (id) {
       setWorkout({ img, note, workout_type, calories, elevation, duration, date, location, dif_level, tag })
-  }
+    }
   }, [])
 
   const handleSubmit = (e) => {
@@ -19,6 +20,8 @@ const WorkoutForm = ({id, img, note, workout_type, calories, elevation, duration
     } 
     setWorkout({img: '', note: '', workout_type: '', calories: 0, elevation: 0, duration: 0, date: '', location: '', dif_level: 0, tag: ''})
     }
+  
+
   
   return (
     <>

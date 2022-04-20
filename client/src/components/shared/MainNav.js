@@ -53,7 +53,7 @@ const MainNav = ({user, handleLogout }) => {
         brand=
         {<a className="brand-logo left" href="/"> 
         <img src={Logo}
-        height="80px" />
+        height="80px" alt="logo"/>
         </a>}
         id="mobile-nav"
         menuIcon={<Icon>menu</Icon>}
@@ -91,7 +91,7 @@ const MainNav = ({user, handleLogout }) => {
               onOpenStart: null,
               outDuration: 250
             }}
-            trigger={<a href="#!">Login</a>}
+            trigger={<a href="#!" style={{color: "black"}}>Menu</a>}
           >
         {/* <SweatNavItem> */}
             { rightNavItems() }

@@ -19,6 +19,21 @@ export const DropdownId = styled(Dropdown)`
 
 `
 
+export const HomeButton = styled(Button)`
+  padding-top: 20px !important;
+  padding-bottom: 10px !important; 
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+  font-size: 30pt;
+  height: 80px;
+  margin: 30px 20px 20px 20px;
+  background-color: #FF914D;
+`
+export const Homediv = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const ParallaxId = styled(Parallax)`
   width: 100%;
   height: 400px;

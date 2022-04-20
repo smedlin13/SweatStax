@@ -20,6 +20,7 @@ const WorkoutProvider = ({ children }) => {
     axios.post('/api/workouts', { workout })
       .then( res => setWorkouts([...workouts, res.data]))
       .catch( err => console.log(err))
+      navigate('/workouts')
   }
 
   const updateWorkout = (id, workout) => {
