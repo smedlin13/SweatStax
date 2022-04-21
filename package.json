@@ -18,7 +18,8 @@
     "test": "test"
   },
   "engines": {
-    "node": "16.14.2"
+    "node": "16.13.0",
+    "npm": "8.7.0"
   },
   "scripts": {
     "start": "node app.js",
