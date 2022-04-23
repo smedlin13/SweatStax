@@ -1,4 +1,5 @@
 require 'rails/application_controller'
+
 class StaticController < ApplicationController
   layout false
 
