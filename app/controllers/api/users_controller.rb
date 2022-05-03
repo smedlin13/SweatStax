@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def update
     user = User.find(params[:id])
@@ -8,8 +8,14 @@ class Api::UsersController < ApplicationController
     user.username = params[:username] ? params[:username] : user.username
     user.caption = params[:caption] ? params[:caption] : user.caption
     user.email = params[:email] ? params[:email] : user.email
-    # user.image = params[:image] ? params[:image] : user.image
+    user.image = params[:image] ? params[:image] : user.image
     user.password = params[:password] ? params[:password] : user.password
+    if user.save 
+      render json: user 
+    else 
+      render json: { errors: user.errors }, status: :unprocessable_entity
+    end
+  end
 
     file = params[:file]
 
@@ -35,7 +41,6 @@ class Api::UsersController < ApplicationController
       end
     end
   end
-
   # def add_workouts
   # incoming_workouts = params[:workout_total]
   #     current_user.workout_total = incoming_workouts

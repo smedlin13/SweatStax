@@ -1,8 +1,7 @@
 require 'rails/application_controller'
-include ::ActionView::Layouts
+# include ::ActionView::Layouts
 
-class StaticController < ApplicationController
-  
+class StaticController < Rails::ApplicationController
   layout false
 
    def index

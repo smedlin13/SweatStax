@@ -92,10 +92,10 @@ const Profile = ({ user, updateUser }) => {
           onremovefile={handleFileRemoved}
           allowMultiple={false}
           name="image"
-          // server="/api"
-          // value={formVals.image}
+          server="/api/auth"
+          value={formVals.image}
           labelIdle='Drag and Drop your files or <span class="filepond--label-action">Browse</span>'
-          onChange={(e) => setFormValue({ ...formVals, image: e.target.value })}
+          // onChange={(e) => setFormValue({ ...formVals, image: e.target.value })}
         />
         <label>About You</label>
           <textarea
