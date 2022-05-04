@@ -50,5 +50,3 @@ class Api::UsersController < ApplicationController
   #       render json: { errors: current_user.errors }, status: :unprocessable_entity 
   #     end
   #   end
-
-end
