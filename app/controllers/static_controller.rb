@@ -1,5 +1,5 @@
 require 'rails/application_controller'
-# include ::ActionView::Layouts
+include ::ActionView::Layouts
 
 class StaticController < Rails::ApplicationController
   layout false
