@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
   //   .catch( err => console.log(err) )
   // }
 
-  
+
   const updateUser = (id, user) => {
     let data = new FormData();
     data.append('fname', user.fname);
@@ -63,7 +63,7 @@ const AuthProvider = ({ children }) => {
     data.append('file', user.image);
     axios.put(`/api/users/${id}`, data)
       .then( res => {
-        setUser(res.data)
+        setUser(res.data);
         navigate('/profile')
       })
       .catch( err => console.log(err) )

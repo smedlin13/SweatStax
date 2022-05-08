@@ -1,10 +1,9 @@
 require 'rails/application_controller'
-# include ::ActionView::Layouts
 
 class StaticController < Rails::ApplicationController
   layout false
 
    def index
-     render file: Rails.root.join('public', 'index.html')
+     render template: Rails.root.join('public', 'index.html'), status: :not_found
    end
 end
