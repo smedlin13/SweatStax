@@ -2,11 +2,11 @@ import { AuthConsumer } from '../../providers/AuthProvider';
 import { useEffect } from 'react';
 import Workouts from '../workouts/Workouts.js';
 
-const Dashboard = ({ user }) => {
+const Dashboard = ({ user, workouts }) => {
 
   return (
     <>
-    <Workouts />
+    <Workouts workouts={workouts}/>
     </>
   )
 
